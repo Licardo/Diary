@@ -19,8 +19,5 @@
     * [python的ConfigParser](12.md)
 * 技能
     * [activity栈](13.md)
-    * [写点什么](15.md)
-    * [不知道写点什么](16.md)
-    * [github-gitbook-github pages](17.md)
-    * [测试上一个流程](18.md)
+    * [github-gitbook-github流程](git_blog.md)
 
