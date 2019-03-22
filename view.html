@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>原型模式 · GitBook</title>
+        <title>view相关心得 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="07.html" />
     
-    
-    <link rel="prev" href="05.html" />
+    <link rel="prev" href="git_blog.html" />
     
 
     </head>
@@ -168,7 +166,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.1.6" data-path="06.html">
+        <li class="chapter " data-level="1.1.6" data-path="06.html">
             
                 <a href="06.html">
             
@@ -368,7 +366,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="view.html">
+        <li class="chapter active" data-level="1.5.3" data-path="view.html">
             
                 <a href="view.html">
             
@@ -416,7 +414,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >原型模式</a>
+        <a href="." >view相关心得</a>
     </h1>
 </div>
 
@@ -431,65 +429,27 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x539F;&#x578B;&#x6A21;&#x5F0F;">&#x539F;&#x578B;&#x6A21;&#x5F0F;</h1>
-<h2 id="&#x539F;&#x578B;&#x6A21;&#x5F0F;&#x4E3B;&#x8981;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x62F7;&#x8D1D;&#xFF0C;&#x6D89;&#x53CA;&#x5230;&#x6DF1;&#x62F7;&#x8D1D;&#x548C;&#x6D45;&#x62F7;&#x8D1D;">&#x539F;&#x578B;&#x6A21;&#x5F0F;&#x4E3B;&#x8981;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x62F7;&#x8D1D;&#xFF0C;&#x6D89;&#x53CA;&#x5230;&#x6DF1;&#x62F7;&#x8D1D;&#x548C;&#x6D45;&#x62F7;&#x8D1D;</h2>
-<h3 id="&#x6D45;&#x62F7;&#x8D1D;&#xFF1A;&#x53EA;&#x62F7;&#x8D1D;&#x81EA;&#x8EAB;&#x548C;&#x6240;&#x5305;&#x542B;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x5730;&#x5740;">&#x6D45;&#x62F7;&#x8D1D;&#xFF1A;&#x53EA;&#x62F7;&#x8D1D;&#x81EA;&#x8EAB;&#x548C;&#x6240;&#x5305;&#x542B;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x5730;&#x5740;</h3>
-<h3 id="&#x6DF1;&#x62F7;&#x8D1D;&#xFF1A;&#x62F7;&#x8D1D;&#x81EA;&#x8EAB;&#x548C;&#x6240;&#x5305;&#x542B;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x5730;&#x5740;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x5305;&#x542B;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5B50;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x5730;&#x5740;">&#x6DF1;&#x62F7;&#x8D1D;&#xFF1A;&#x62F7;&#x8D1D;&#x81EA;&#x8EAB;&#x548C;&#x6240;&#x5305;&#x542B;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x5730;&#x5740;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x5305;&#x542B;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5B50;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x5730;&#x5740;</h3>
-<h3 id="&#x7528;&#x6CD5;&#xFF1A;&#x662F;&#x60F3;cloneable&#x63A5;&#x53E3;">&#x7528;&#x6CD5;&#xFF1A;&#x662F;&#x60F3;Cloneable&#x63A5;&#x53E3;</h3>
-<p>`
-public class Administrator implements Cloneable {</p>
-<pre><code>private User user;
-
-private Boolean editable;
-
-public Administrator(User user, Boolean editable) {
-
-    this.user = user;
-
-    this.editable = editable;
-
-}
-
-
-
-@Override
-
-protected Object clone() throws CloneNotSupportedException {
-
-    return super.clone();
-
-}
-
-@Override
-
-public int hashCode() {
-
-    // &#x8001;&#x89C4;&#x77E9;
-
-}
-
-@Override
-
-public boolean equals(Object obj) {
-
-    // &#x8001;&#x89C4;&#x77E9;
-
-}
-
-// &#x8001;&#x89C4;&#x77E9;
-</code></pre><p>}
-`</p>
-<h3 id="&#x6DF1;&#x62F7;&#x8D1D;&#xFF1A;">&#x6DF1;&#x62F7;&#x8D1D;&#xFF1A;</h3>
-<p>`
-@Override</p>
-<p>protected Object clone() throws CloneNotSupportedException {</p>
-<pre><code>Administrator admin = (Administrator) super.clone();
-
-admin.user = (User) admin.user.clone();
-
-return admin;
-</code></pre><p>}
-`</p>
+                                <h1 id="view&#x76F8;&#x5173;&#x5FC3;&#x5F97;">view&#x76F8;&#x5173;&#x5FC3;&#x5F97;</h1>
+<p>&#x6700;&#x8FD1;&#x770B;&#x4E86;view&#x76F8;&#x5173;&#x7684;&#x77E5;&#x8BC6;&#x70B9;&#xFF0C;&#x603B;&#x89C9;&#x5F97;&#x6DF1;&#x5EA6;&#x4E0D;&#x591F;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x4E5F;&#x6CA1;&#x6709;&#x89E3;&#x7B54;&#xFF0C;&#x6545;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;</p>
+<h5 id="&#x95EE;&#x9898;">&#x95EE;&#x9898;</h5>
+<ul>
+<li>&#x5982;&#x679C;&#x5728;RecyclerView&#x4E2D;&#x6709;&#x8017;&#x65F6;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5728;&#x7F13;&#x5B58;item&#x7684;&#x65F6;&#x5019;&#x662F;&#x5426;&#x4F1A;&#x9020;&#x6210;&#x7F13;&#x5B58;&#x5931;&#x6548;&#xFF1F;</li>
+<li>View&#x52A8;&#x753B;&#x662F;&#x600E;&#x4E48;&#x505A;&#x5230;&#x4E0D;&#x6539;&#x53D8;View&#x5B9E;&#x9645;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EA;&#x64CD;&#x4F5C;View&#x5F71;&#x50CF;&#xFF1F;</li>
+<li>Activity&#x5728;&#x521B;&#x5EFA;&#x4E4B;&#x521D;&#xFF0C;&#x4E00;&#x8FB9;&#x6267;&#x884C;onCreate&#x65B9;&#x6CD5;&#xFF0C;&#x4E00;&#x8FB9;&#x7ED8;&#x5236;View(scheduleTraversals&#x65B9;&#x6CD5;)&#xFF0C;&#x9020;&#x6210;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x5728;onCreate&#x3001;onStart&#x3001;onResume&#x65E0;&#x6CD5;&#x83B7;&#x53D6;View&#x7684;&#x5BBD;&#x9AD8;&#xFF0C;&#x5982;&#x679C;&#x90FD;&#x662F;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x8FD0;&#x884C;&#xFF0C;&#x662F;&#x5982;&#x4F55;&#x505A;&#x5230;&#x7684;&#xFF0C;&#x5982;&#x679C;View&#x7ED8;&#x5236;&#x662F;&#x5728;&#x5B50;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x662F;&#x5728;&#x4EC0;&#x4E48;&#x65F6;&#x673A;&#x5207;&#x56DE;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#xFF1F;</li>
+</ul>
+<h5 id="&#x77E5;&#x8BC6;&#x70B9;">&#x77E5;&#x8BC6;&#x70B9;</h5>
+<ul>
+<li>View&#x7684;padding&#x5C5E;&#x6027;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5904;&#x7406;&#xFF0C;margin&#x5C5E;&#x6027;&#x662F;&#x7236;&#x5E03;&#x5C40;ViewGroup&#x5904;&#x7406;&#xFF0C;&#x5728;&#x81EA;&#x5B9A;&#x4E49;View&#x65F6;&#x4F1A;&#x7528;&#x5230;</li>
+<li>View&#x7684;&#x5BBD;&#x9AD8;&#x4E0D;&#x53EA;&#x662F;&#x7531;&#x81EA;&#x5DF1;&#x51B3;&#x5B9A;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x7684;LayoutParam&#x548C;&#x7236;&#x5E03;&#x5C40;&#x7684;MeasureSpecMode&#x5171;&#x540C;&#x51B3;&#x5B9A;</li>
+<li>&#x81EA;&#x5B9A;&#x4E49;View&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x624B;&#x52A8;&#x652F;&#x6301;padding&#x5C5E;&#x6027;&#xFF0C;&#x5728;onDraw&#x65B9;&#x6CD5;&#x4E2D;&#x5B9E;&#x73B0;&#xFF1B;&#x8FD8;&#x8981;&#x652F;&#x6301;wrap_content&#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x5728;View&#x6E90;&#x7801;&#x4E2D;&#x7684;&#x5B9A;&#x4E49;&#x662F;&#x65E0;&#x8BBA;&#x5BBD;&#x9AD8;&#x8BBE;&#x7F6E;&#x4E86;wrap_content&#xFF0C;&#x90FD;&#x4F1A;&#x663E;&#x793A;&#x7236;&#x5E03;&#x5C40;&#x7684;&#x5BBD;&#x9AD8;&#x3002;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x5173;&#x6CE8;TextView&#x3002;</li>
+<li>View&#x4E8B;&#x4EF6;&#x7684;&#x5206;&#x53D1;&#x662F;&#x975E;&#x5E38;&#x7CBE;&#x5999;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x4F53;&#x4F1A;&#x3002;<code>public void dispatchTouchEvent() { if(onInterceptTouchEvent() { super.onTouchEvent() } else { child.onTouchEvent() }) }</code></li>
+<li>&#x5982;&#x679C;ViewGroup&#x62E6;&#x622A;&#x4E86;ACTION_DOWN&#x4E8B;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;ACTION_MOVE&#x548C;ACTION_UP&#x4E0D;&#x4F1A;&#x6267;&#x884C;onterceptTouchEvent()&#x65B9;&#x6CD5;&#xFF0C;&#x53D8;&#x91CF;mFirstTouchTarget(&#x597D;&#x50CF;&#x662F;)&#x8D77;&#x4E86;&#x5173;&#x952E;&#x4F5C;&#x7528;</li>
+<li>&#x5982;&#x679C;View&#x62E6;&#x622A;&#x4E86;ACTION_DOWN&#x4E8B;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x5269;&#x4F59;&#x4E8B;&#x4EF6;&#x4E5F;&#x4E0D;&#x4F1A;&#x6267;&#x884C;onterceptTouchEvent()&#x65B9;&#x6CD5;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#x5F71;&#x54CD;&#x7236;&#x5E03;&#x5C40;ViewGroup&#x7684;&#x5224;&#x65AD;</li>
+<li>mFirstTouchTarget&#x5176;&#x5B9E;&#x662F;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x5F53;ViewGroup&#x6D88;&#x8D39;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x5219;mFirstTouchTarget=null&#xFF0C;&#x5982;&#x679C;View&#x6D88;&#x8D39;&#x4E86;&#x4E8B;&#x4EF6;mFirstTouchTarget=&#x8BE5;View&#x3002;</li>
+<li>View&#x7684;&#x6ED1;&#x52A8;&#x51B2;&#x7A81;&#x662F;&#x8001;&#x751F;&#x5E38;&#x8C08;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x9700;&#x8981;&#x6709;&#x6E05;&#x6670;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x540C;&#x65F6;&#x6CE8;&#x610F;&#x4E0A;&#x9762;&#x51E0;&#x6761;&#x77E5;&#x8BC6;&#x70B9;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x91CD;&#x5199;onInterceptTouchEvent()&#xFF0C;&#x7EC6;&#x8282;&#x9700;&#x8981;&#x770B;&#x4EFB;&#x7389;&#x521A;&#x7684;&#x4E66;</li>
+<li>View&#x7684;&#x51E0;&#x79CD;&#x6ED1;&#x52A8;&#x65B9;&#x5F0F;&#xFF0C;scrollTo/scrollBy:&#x53EA;&#x80FD;&#x6ED1;&#x52A8;View&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x80FD;&#x6ED1;&#x52A8;View&#x4F4D;&#x7F6E;&#xFF0C;&#x7C7B;&#x4F3C;ScrollView&#xFF1B;&#x52A8;&#x753B;&#xFF0C;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x548C;View&#x52A8;&#x753B;&#xFF1B;&#x6539;&#x53D8;LayoutParam&#x7684;&#x503C;&#x3002;</li>
+<li>&#x5F39;&#x6027;&#x6ED1;&#x52A8;&#x7684;&#x51E0;&#x5F20;&#x65B9;&#x5F0F;&#xFF1A;Scroller&#x548C;postDelay&#x3001;sleep&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x601D;&#x8DEF;&#x5C31;&#x662F;&#x628A;&#x6ED1;&#x52A8;&#x5206;&#x6210;&#x8BB8;&#x591A;&#x5F88;&#x5C0F;&#x7684;&#x6BB5;&#xFF0C;&#x6BCF;&#x6BB5;&#x8BBE;&#x7F6E;&#x6ED1;&#x52A8;&#x65F6;&#x95F4;&#x7136;&#x540E;&#x5EF6;&#x8FDF;&#x518D;&#x6ED1;&#x52A8;&#x53E6;&#x4E00;&#x6BB5;&#x3002;</li>
+</ul>
 
                                 
                                 </section>
@@ -517,14 +477,10 @@ return admin;
 
             
                 
-                <a href="05.html" class="navigation navigation-prev " aria-label="Previous page: 工厂方法模式">
+                <a href="git_blog.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: github-gitbook-github流程">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="07.html" class="navigation navigation-next " aria-label="Next page: 建造者模式">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -533,7 +489,7 @@ return admin;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"原型模式","level":"1.1.6","depth":2,"next":{"title":"建造者模式","level":"1.1.7","depth":2,"path":"07.md","ref":"07.md","articles":[]},"previous":{"title":"工厂方法模式","level":"1.1.5","depth":2,"path":"05.md","ref":"05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"06.md","mtime":"2019-03-20T07:36:34.125Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-22T15:16:28.362Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"view相关心得","level":"1.5.3","depth":2,"previous":{"title":"github-gitbook-github流程","level":"1.5.2","depth":2,"path":"git_blog.md","ref":"git_blog.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"view.md","mtime":"2019-03-22T15:15:41.781Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-22T15:16:28.362Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
