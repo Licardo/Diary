@@ -21,4 +21,5 @@
     * [activity栈](13.md)
     * [github-gitbook-github流程](git_blog.md)
     * [view相关心得](view.md)
+    * [volitile](volitile.md)
 
